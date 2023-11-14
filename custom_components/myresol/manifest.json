@@ -1,0 +1,17 @@
+{
+  "domain": "myresol",
+  "name": "My Resol 2023.11.0",
+  "codeowners": [
+    "@evercape"
+  ],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/evercape/resol",
+  "issue_tracker": "https://github.com/evercape/resol/issues",
+  "homekit": {},
+  "iot_class": "cloud_polling",
+  "requirements": [],
+  "ssdp": [],
+  "zeroconf": [],
+  "version": "2023.11.0"
+}
