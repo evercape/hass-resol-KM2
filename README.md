@@ -1,2 +1,142 @@
-# myresol
-HA testing first component
+<!-- prettier-ignore -->
+
+# hass-resol-KM2
+[![GitHub Release][releases-shield]][releases]
+[![GitHub Activity][commits-shield]][commits]
+[![License][license-shield]][license]
+
+[![hacs][hacsbadge]][hacs]
+![Project Maintenance][maintenance-shield]
+[![BuyMeCoffee][buymecoffeebadge]][buymecoffee]
+
+[![Community Forum][forum-shield]][forum]
+
+
+# hass-Resol-KM2
+
+[Home Assistant](https://home-assistant.io/) custom component to log sensor information from Resol devices using KM2 communication module. This is my first time programming in Python and publishing to Github. 
+
+This component was inspired by [dm82m/hass-Deltasol-KM2](https://github.com/dm82m/hass-Deltasol-KM2/) and I used some of dm82m's code to fetch the KM2's data via webservice. 
+
+The following
+
+My own list for future improvements:
+- Companian card with visualization
+- Logging into txt file
+- Synchronise device and integration 'custom name'
+- https 
+
+## Installation
+
+### HACS (soon)
+
+- Haven't figured out how to publish to HACS, will update soon.
+
+### Manual install
+
+Create a directory called `resol` in the `<config directory>/custom_components/` directory on your Home Assistant instance. Install this component by copying all files in `/custom_components/resol/` folder from this repo into the new `<config directory>/custom_components/resol/` directory you just created.
+
+This is how your custom_components directory should look like:
+
+```bash
+custom_components
+├── resol
+├────── translations
+│   ├───├── en.json
+│   ├── __init__.py
+│   ├── config_flow.py
+│   ├── const.py
+│   ├── manifest.json
+│   ├── resolapi.py
+│   ├── sensor.py
+│   └── strings.json  
+```
+
+## Configuration
+
+I have tested the component with two olrder KM2 controllers, one on firmware 1.1 and the other on 1.2. Firmware updates can be found on [Resol's website](https://www.resol.de/en/produktdetail/209)
+
+Instead of relying on YAML code to setup this component, I opted for a custom flow which setups actual devices with its corresponding sensors. 
+
+To start the setup of this custom integration:
+- go to Home Assistant's Integration Dashboard
+- Add Integration
+- Search for Resol Controller
+- Follow the prompts in step 1 and 2
+
+### Step 1 - Connection details
+The following connection details are required to detect the Resol KM2 device:
+Host: internal IP or hostname
+Port: default 80, change to any http port and make sure port forwarding on your router is activated.
+Username: default 'admin'
+Password: Password of the KM2. If you have not changed it, the default password is typically printed on a sticker attached to the device
+![setup_step_1](https://github.com/evercape/hass-resol-KM2/assets/4627761/a6a2c7c8-0f3e-4a8b-92db-9496d11d8ebc)
+
+### Step 2 - Device options
+The following optional parameters can be configured in step 2 of the setup process:
+Friendly custom name: Default is the device name as provided by the KM2 controller.
+Polling interval: Default 60 seconds, time delta to pull new sensor data. 
+Group sensors on device page: If this option is ticked, the actual device data such as temperature, pump speed will be seperated from diagnostics data such as software version, system time, error masks etc. This will reduce history database within HASS and visually seperate device data on the device page.
+Disable diagnostic sensors: If ticked, diagnostic sensors will be disabled by default. You can enable them via the UI.
+![setup_step_2](https://github.com/evercape/hass-resol-KM2/assets/4627761/3d8f6a70-73ee-42fc-8b99-078d945b7e01)
+
+### Controllers and devices
+After succcessful setup, the controllers representing Resol KM2 devices should show up in a list. The Resol logo is not yet shown and a [pull request](https://github.com/home-assistant/brands/pull/4904) in https://brands.home-assistant.io is currently pending.
+![controller_list](https://github.com/evercape/hass-resol-KM2/assets/4627761/f4afaee8-c7c0-4db8-a618-1836de38a7ac)
+
+On any controller's device page, the hardware related device information is displayed, together with sensors typically grouped into main entity sensors and diagnostics. A quicklink to the Resol KM2 module is available under the 'Visit' link. As you can see in the following screenshot, I have manually disabled some of the temperature and pump speed sensors and enabled some other diagnostics sensors using the HASS GUI.
+![controller_detail](https://github.com/evercape/hass-resol-KM2/assets/4627761/86678db8-5393-4a42-9b38-8b548443317c)
+
+### Sensors
+Sensors are registered to each device (which is an instance of Resol Controller) as `sensor.km2_{serial}_{sensor_name}` with an easy to read friendly name of `sensor_name`. Additional attributes are presented on each sensor:
+- Product Description, Destination Name, Source Name: Some internal names from Resol
+- Internal Unique ID: `{serial}_{header}_{sensor_hex}`
+- Device Name: as registered in the KM2 web interface upon registration
+- Vendor Product Serial: serial number of the KM2 interface, typically matches the MAC address of the Ethernet adapter
+- Vendor Firmware Version: as provided by the KM2 web interface upon registration
+- Vendor Product Build: as provided by the KM2 web interface upon registration
+- Vendor Product Features: as provided by the KM2 web interface upon registration
+![sensor](https://github.com/evercape/hass-resol-KM2/assets/4627761/7cc651e3-442d-4fac-81d5-5a155a077f8c)
+
+
+## Troubleshooting
+Please set your logging for the this custom component to debug during initial setup phase. If everything works well, you are safe to remove the debug logging:
+```yaml
+logger:
+  default: warn
+  logs:
+    custom_components.resol: info
+```
+
+## Credits
+
+Thank you for inspiring me to start learning Python and re-programming the existing deltasol KM2 controller from scratch: [dm82m](https://github.com/dm82m)
+
+Thank you for in-depth documentation on Resol controllers: [danielwippermann](https://github.com/danielwippermann), and this [discussion](https://github.com/danielwippermann/resol-vbus/issues/32) is worth a read.
+
+
+
+
+
+
+
+
+[releases-shield]: https://img.shields.io/github/release/evercape/hass-resol-KM2.svg?style=for-the-badge
+[releases]: https://github.com/evercape/hass-resol-KM2/releases
+
+[commits-shield]: https://img.shields.io/github/commit-activity/y/evercape/hass-resol-KM2?style=for-the-badge
+[commits]: https://github.com/evercape/hass-resol-KM2/commits/master
+
+[license-shield]: https://img.shields.io/github/license/evercape/hass-resol-KM2.svg?style=for-the-badge
+[license]: LICENSE
+
+[hacs]: https://github.com/custom-components/hacs
+[hacsbadge]: https://img.shields.io/badge/HACS-Custom-orange.svg?style=for-the-badge
+
+[maintenance-shield]: https://img.shields.io/badge/maintainer-Martin%20Diessner%20%40evercape-blue.svg?style=for-the-badge
+
+[buymecoffee]: https://www.buymeacoffee.com/evercape
+[buymecoffeebadge]: https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg?style=for-the-badge
+
+[forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg?style=for-the-badge
+[forum]: https://community.home-assistant.io/t/resol-km2/
