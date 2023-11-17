@@ -18,13 +18,28 @@
 
 This component was inspired by [dm82m/hass-Deltasol-KM2](https://github.com/dm82m/hass-Deltasol-KM2/) and I used some of dm82m's code to fetch the KM2's data via webservice. 
 
-The following
+## Changes and improvements:
+I have made the following changes to dm82m's component. Some are improvements, others maybe not so. The main purpose for me was to learn Python, program my first HASS custom integration from scratch and to publish to github.
 
-My own list for future improvements:
+- Setup via `custom_flow` using multiple steps
+- Add port as connection detail
+- Combine KM2 specific sensors into devices as suggested by [hoppel118](https://github.com/dm82m/hass-Deltasol-KM2/issues/24)
+- Group sensors into 'useful' device sensors and less important diagnostics sensors
+- Each sensor entity_id incorporate unique device name, yet presents friendly sensor name
+- Present additional device specific attributes on each sensor
+- Extensive debug logging (hopefully helpful to anyone going through the same learning curve as myself)
+- Adding translations
+
+
+## My own wish list for future improvements:
+- HACS integration
+- Pull (via curl) the device uptime from Web Interface into new device diagnostics sensor
+- Extend translations
+- Extend from KM2 module to DL2, KM1 and VBUS API (I only own 2x KM2s, so would rely on someone's access to a device)
 - Companian card with visualization
 - Logging into txt file
 - Synchronise device and integration 'custom name'
-- https 
+- support for https
 
 ## Installation
 
@@ -42,7 +57,7 @@ This is how your custom_components directory should look like:
 custom_components
 ├── resol
 ├────── translations
-│   ├───├── en.json
+│   ├───└── en.json
 │   ├── __init__.py
 │   ├── config_flow.py
 │   ├── const.py
@@ -66,25 +81,31 @@ To start the setup of this custom integration:
 
 ### Step 1 - Connection details
 The following connection details are required to detect the Resol KM2 device:
-Host: internal IP or hostname
-Port: default 80, change to any http port and make sure port forwarding on your router is activated.
-Username: default 'admin'
-Password: Password of the KM2. If you have not changed it, the default password is typically printed on a sticker attached to the device
+- Host: internal IP or hostname
+- Port: default 80, change to any http port and make sure port forwarding on your router is activated.
+- Username: default 'admin'
+- Password: Password of the KM2. If you have not changed it, the default password is typically printed on a sticker attached to the device
+  
 ![setup_step_1](https://github.com/evercape/hass-resol-KM2/assets/4627761/a6a2c7c8-0f3e-4a8b-92db-9496d11d8ebc)
 
 ### Step 2 - Device options
 The following optional parameters can be configured in step 2 of the setup process:
-Friendly custom name: Default is the device name as provided by the KM2 controller.
-Polling interval: Default 60 seconds, time delta to pull new sensor data. 
-Group sensors on device page: If this option is ticked, the actual device data such as temperature, pump speed will be seperated from diagnostics data such as software version, system time, error masks etc. This will reduce history database within HASS and visually seperate device data on the device page.
-Disable diagnostic sensors: If ticked, diagnostic sensors will be disabled by default. You can enable them via the UI.
+- Friendly custom name: Default is the device name as provided by the KM2 controller.
+- Polling interval: Default 60 seconds, time delta to pull new sensor data. 
+- Group sensors on device page: If this option is ticked, the actual device data such as temperature, pump speed will be seperated from diagnostics data such as software version, system time, error masks etc. This will reduce history database within HASS and visually seperate device data on the device page.
+- Disable diagnostic sensors: If ticked, diagnostic sensors will be disabled by default. You can enable them via the UI.
+  
 ![setup_step_2](https://github.com/evercape/hass-resol-KM2/assets/4627761/3d8f6a70-73ee-42fc-8b99-078d945b7e01)
 
 ### Controllers and devices
 After succcessful setup, the controllers representing Resol KM2 devices should show up in a list. The Resol logo is not yet shown and a [pull request](https://github.com/home-assistant/brands/pull/4904) in https://brands.home-assistant.io is currently pending.
+
 ![controller_list](https://github.com/evercape/hass-resol-KM2/assets/4627761/f4afaee8-c7c0-4db8-a618-1836de38a7ac)
 
-On any controller's device page, the hardware related device information is displayed, together with sensors typically grouped into main entity sensors and diagnostics. A quicklink to the Resol KM2 module is available under the 'Visit' link. As you can see in the following screenshot, I have manually disabled some of the temperature and pump speed sensors and enabled some other diagnostics sensors using the HASS GUI.
+On any controller's device page, the hardware related device information is displayed, together with sensors typically grouped into main entity sensors and diagnostics. A quicklink to the Resol KM2 module is available under the 'Visit' link. 
+
+As you can see in the following screenshot, I have manually disabled some of the temperature and pump speed sensors and enabled some other diagnostics sensors using the HASS GUI.
+
 ![controller_detail](https://github.com/evercape/hass-resol-KM2/assets/4627761/86678db8-5393-4a42-9b38-8b548443317c)
 
 ### Sensors
@@ -96,6 +117,7 @@ Sensors are registered to each device (which is an instance of Resol Controller)
 - Vendor Firmware Version: as provided by the KM2 web interface upon registration
 - Vendor Product Build: as provided by the KM2 web interface upon registration
 - Vendor Product Features: as provided by the KM2 web interface upon registration
+  
 ![sensor](https://github.com/evercape/hass-resol-KM2/assets/4627761/7cc651e3-442d-4fac-81d5-5a155a077f8c)
 
 
@@ -133,7 +155,7 @@ Thank you for in-depth documentation on Resol controllers: [danielwippermann](ht
 [hacs]: https://github.com/custom-components/hacs
 [hacsbadge]: https://img.shields.io/badge/HACS-Custom-orange.svg?style=for-the-badge
 
-[maintenance-shield]: https://img.shields.io/badge/maintainer-Martin%20Diessner%20%40evercape-blue.svg?style=for-the-badge
+[maintenance-shield]: https://img.shields.io/badge/maintainer-Martin%20%40evercape-blue.svg?style=for-the-badge
 
 [buymecoffee]: https://www.buymeacoffee.com/evercape
 [buymecoffeebadge]: https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg?style=for-the-badge
