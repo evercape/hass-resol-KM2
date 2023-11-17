@@ -85,7 +85,7 @@ The following connection details are required to detect the Resol KM2 device:
 - Username: default 'admin'
 - Password: Password of the KM2. If you have not changed it, the default password is typically printed on a sticker attached to the device
   
-![setup_step_1](https://github.com/evercape/hass-resol-KM2/assets/4627761/a6a2c7c8-0f3e-4a8b-92db-9496d11d8ebc)
+![setup_step_1](documentation/setup_step_1.jpg)
 
 ### Step 2 - Device options
 The following optional parameters can be configured in step 2 of the setup process:
@@ -94,18 +94,18 @@ The following optional parameters can be configured in step 2 of the setup proce
 - Group sensors on device page: If this option is ticked, the actual device data such as temperature, pump speed will be seperated from diagnostics data such as software version, system time, error masks etc. This will reduce history database within HASS and visually seperate device data on the device page.
 - Disable diagnostic sensors: If ticked, diagnostic sensors will be disabled by default. You can enable them via the UI.
   
-![setup_step_2](https://github.com/evercape/hass-resol-KM2/assets/4627761/3d8f6a70-73ee-42fc-8b99-078d945b7e01)
+![setup_step_2](documentation/setup_step_2.jpg)
 
 ### Controllers and devices
 After succcessful setup, the controllers representing Resol KM2 devices should show up in a list. The Resol logo is not yet shown and a [pull request](https://github.com/home-assistant/brands/pull/4904) in https://brands.home-assistant.io is currently pending.
 
-![controller_list](https://github.com/evercape/hass-resol-KM2/assets/4627761/f4afaee8-c7c0-4db8-a618-1836de38a7ac)
+![controller_list](documentation/controller_list.jpg)
 
 On any controller's device page, the hardware related device information is displayed, together with sensors typically grouped into main entity sensors and diagnostics. A quicklink to the Resol KM2 module is available under the 'Visit' link. 
 
 As you can see in the following screenshot, I have manually disabled some of the temperature and pump speed sensors and enabled some other diagnostics sensors using the HASS GUI.
 
-![controller_detail](https://github.com/evercape/hass-resol-KM2/assets/4627761/86678db8-5393-4a42-9b38-8b548443317c)
+![controller_detail](documentation/controller_detail.jpg)
 
 ### Sensors
 Sensors are registered to each device (which is an instance of Resol Controller) as `sensor.km2_{serial}_{sensor_name}` with an easy to read friendly name of `sensor_name`. Additional attributes are presented on each sensor:
@@ -117,7 +117,7 @@ Sensors are registered to each device (which is an instance of Resol Controller)
 - Vendor Product Build: as provided by the KM2 web interface upon registration
 - Vendor Product Features: as provided by the KM2 web interface upon registration
   
-![sensor](https://github.com/evercape/hass-resol-KM2/assets/4627761/7cc651e3-442d-4fac-81d5-5a155a077f8c)
+![sensor](documentation/sensor.jpg)
 
 
 ## Troubleshooting
