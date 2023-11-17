@@ -23,9 +23,13 @@ I have made the following changes to dm82m's component. Some are improvements, o
 - Combine KM2 specific sensors into devices as suggested by [hoppel118](https://github.com/dm82m/hass-Deltasol-KM2/issues/24)
 - Group sensors into 'useful' device sensors and less important diagnostics sensors
 - Each sensor entity_id incorporate unique device name, yet presents friendly sensor name
+- Update of the full dataset of all sensors belonging to a KM2 device with single API call
+- Sensors that are disabled are skipped for updates, same with sensors where the state value has not changed
 - Present additional device specific attributes on each sensor
 - Extensive debug logging (hopefully helpful to anyone going through the same learning curve as myself)
 - Adding translations
+
+There is a disadvantage in my integration: I only focused on KM2, even though I am certain that this integration could easily be amended to include DL2, KM1, VBUS and other Resol devices. The reason for this is that I simply don't own any other Resol device and henceforth could not test this. If anyone is interested to extend this integration, please let me know, happy to do so. 
 
 
 ## My own wish list for future improvements:
@@ -120,11 +124,25 @@ Sensors are registered to each device (which is an instance of Resol Controller)
 
 ## Troubleshooting
 Please set your logging for the this custom component to debug during initial setup phase. If everything works well, you are safe to remove the debug logging:
+
 ```yaml
 logger:
   default: warn
   logs:
     custom_components.resol: info
+```
+Here is a copy of my log files for 2x KM2 devices successfully setup, 19 sensors for each device registered, and updates over time:
+
+```
+2023-11-17 09:18:24.495 INFO (MainThread) [custom_components.resol]
+2023-11-17 09:20:48.454 INFO (MainThread) [custom_components.resol] A840411679E7: All '19' sensors have registered.
+2023-11-17 09:21:21.197 INFO (MainThread) [custom_components.resol] A8404116CFCF: All '19' sensors have registered.
+2023-11-17 09:22:21.426 INFO (MainThread) [custom_components.resol] A8404116CFCF: A total of '2' sensors have updated, '10' are disabled and skipped update, '7' sensors value remained constant and '0' sensors occured any errors.
+2023-11-17 09:23:06.922 INFO (MainThread) [custom_components.resol] A840411679E7: All '19' sensors have registered.
+2023-11-17 09:23:48.677 INFO (MainThread) [custom_components.resol] A840411679E7: A total of '2' sensors have updated, '10' are disabled and skipped update, '7' sensors value remained constant and '0' sensors occured any errors.
+2023-11-17 09:24:07.140 INFO (MainThread) [custom_components.resol] A840411679E7: A total of '0' sensors have updated, '10' are disabled and skipped update, '9' sensors value remained constant and '0' sensors occured any errors.
+2023-11-17 09:24:48.680 INFO (MainThread) [custom_components.resol] A840411679E7: A total of '1' sensors have updated, '10' are disabled and skipped update, '8' sensors value remained constant and '0' sensors occured any errors.
+2023-11-17 09:25:07.141 INFO (MainThread) [custom_components.resol] A840411679E7: A total of '1' sensors have updated, '10' are disabled and skipped update, '8' sensors value remained constant and '0' sensors occured any errors.
 ```
 
 ## Credits
