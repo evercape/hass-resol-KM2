@@ -150,7 +150,7 @@ Thank you for in-depth documentation on Resol controllers: [danielwippermann](ht
 [commits]: https://github.com/evercape/hass-resol-KM2/commits/master
 
 [license-shield]: https://img.shields.io/github/license/evercape/hass-resol-KM2.svg?style=for-the-badge
-[license]: LICENSE
+[license]: https://github.com/evercape/hass-resol-KM2/blob/main/LICENSE
 
 [hacs]: https://github.com/custom-components/hacs
 [hacsbadge]: https://img.shields.io/badge/HACS-Custom-orange.svg?style=for-the-badge
