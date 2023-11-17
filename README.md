@@ -176,4 +176,4 @@ Thank you for in-depth documentation on Resol controllers: [danielwippermann](ht
 [buymecoffeebadge]: https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg?style=for-the-badge
 
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg?style=for-the-badge
-[forum]: https://community.home-assistant.io/t/resol-km2/
+[forum]: https://community.home-assistant.io/t/resol-km2-controller/
