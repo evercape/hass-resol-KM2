@@ -1,6 +1,4 @@
 <!-- prettier-ignore -->
-
-# hass-resol-KM2
 [![GitHub Release][releases-shield]][releases]
 [![GitHub Activity][commits-shield]][commits]
 [![License][license-shield]][license]
@@ -11,7 +9,7 @@
 [![Community Forum][forum-shield]][forum]
 
 
-# hass-Resol-KM2
+# Hass-Resol-KM2
 
 [Home Assistant](https://home-assistant.io/) custom component to log sensor information from Resol devices using KM2 communication module. This is my first time programming in Python and publishing to Github. 
 
