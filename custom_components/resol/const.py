@@ -2,18 +2,16 @@
 import logging
 from homeassistant.const import Platform
 
-#https://github.com/home-assistant/brands/tree/master/custom_integrations/deltasol
-#logos automatically mapped
-DOMAIN = "myresol"
-NAME = "Resol Controller for KM2"
+DOMAIN = "resol"                    # Have requested to add logos via https://github.com/home-assistant/brands/pull/4904
+NAME = "Resol Controller"
 VERSION="2023.11.0"
 ISSUE_URL = "https://github.com/evercape/resol/issues"
-ISSUE_URL_ERROR_MESAGE = " Please log any issues here: " + ISSUE_URL
+ISSUE_URL_ERROR_MESSAGE = " Please log any issues here: " + ISSUE_URL
 
 
 PLATFORMS: list[Platform] = [Platform.SENSOR]
 
-_LOGGER = logging.getLogger('custom_components.myresol')
+_LOGGER = logging.getLogger("custom_components.resol")
 
 ATTR_PRODUCT_DESCRIPTION = "Product Description"
 ATTR_DESTINATION_NAME = "Destination Name"
