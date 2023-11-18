@@ -1,7 +1,0 @@
-{
-  "name": "Resol Controller",  
-  "zip_release": true,
-  "render_readme": true,
-  "country": ["NO", "SE", "DK"],
-  "homeassistant": "2022.1.0"
-}
