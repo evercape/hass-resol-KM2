@@ -4,7 +4,7 @@ from homeassistant.const import Platform
 
 DOMAIN = "resol"                    # Have requested to add logos via https://github.com/home-assistant/brands/pull/4904
 NAME = "Resol Controller"
-VERSION="2023.11.0"
+VERSION="2023.11.1"
 ISSUE_URL = "https://github.com/evercape/resol/issues"
 ISSUE_URL_ERROR_MESSAGE = " Please log any issues here: " + ISSUE_URL
 
