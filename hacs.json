@@ -1,4 +1,4 @@
 {
   "name": "Resol Controller",
-  "render_readme": true  
+  "homeassistant": "2022.1.0"
 }
