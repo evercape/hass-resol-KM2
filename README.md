@@ -33,7 +33,7 @@ There is a disadvantage in my integration: I only focused on KM2, even though I 
 
 
 ## My own wish list for future improvements:
-- HACS integration
+- ~~HACS integration~~
 - Pull (via curl) the device uptime from Web Interface into new device diagnostics sensor
 - Extend translations
 - Extend from KM2 module to DL2, KM1 and VBUS API (I only own 2x KM2s, so would rely on someone's access to a device)
@@ -46,7 +46,11 @@ There is a disadvantage in my integration: I only focused on KM2, even though I 
 
 ### HACS (soon)
 
-- Haven't figured out how to publish to HACS, will update soon.
+1. Just search for "_Resol_Controller" integration in HACS. It will be automatically installed to the `custom_integration/resol` directory
+2. Restart Home Assistant.
+3. In the HA UI go to "Configuration" -> "Integrations" click "+" and search for "_Resol_Controller"
+4. Follow the UI based [Configuration](Configuration)
+
 
 ### Manual install
 
