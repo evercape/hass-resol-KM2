@@ -44,7 +44,7 @@ There is a disadvantage in my integration: I only focused on KM2, even though I 
 
 ## Installation
 
-### HACS (soon)
+### HACS
 
 1. Just search for "_Resol_Controller" integration in HACS. It will be automatically installed to the `custom_integration/resol` directory
 2. Restart Home Assistant.
