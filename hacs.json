@@ -1,6 +1,5 @@
 {
   "name": "Resol Controller",
-  "iot_class": "Local Polling",
   "zip_release": true,
   "filename": "resol.zip",
   "render_readme": true
