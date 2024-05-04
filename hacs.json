@@ -1,4 +1,10 @@
 {
   "name": "Resol Controller",
-  "homeassistant": "2022.1.0"
+  "domains": [
+    "sensor"
+  ],
+  "iot_class": "Local Polling",
+  "zip_release": true,
+  "filename": "resol.zip",
+  "render_readme": true
 }
