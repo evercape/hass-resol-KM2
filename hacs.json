@@ -1,8 +1,5 @@
 {
   "name": "Resol Controller",
-  "domains": [
-    "sensor"
-  ],
   "iot_class": "Local Polling",
   "zip_release": true,
   "filename": "resol.zip",
