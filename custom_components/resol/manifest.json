@@ -5,8 +5,12 @@
     "@evercape"
   ],
   "config_flow": true,
-  "dependencies": [],
+  "dependencies": [
+    "recorder",
+    "history"
+  ],
   "documentation": "https://github.com/evercape/resol",
+  "integration_type": "hub",
   "iot_class": "local_polling",
   "issue_tracker": "https://github.com/evercape/resol/issues",
   "requirements": [],
