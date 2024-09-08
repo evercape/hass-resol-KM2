@@ -11,7 +11,7 @@
 
 # Hass-Resol-KM2
 
-[Home Assistant](https://home-assistant.io/) custom component to log sensor information from Resol devices using KM2 communication module. This is my first time programming in Python and publishing to Github. 
+[Home Assistant](https://home-assistant.io/) custom component to log sensor information from Resol devices using KM2 communication module. This is my first time programming in Python and publishing to Github. Over time, this component has been updated to also work with [DL2 and JSON Live Data Server]([url](https://github.com/evercape/hass-resol-KM2/issues/3)).
 
 This component was inspired by [dm82m/hass-Deltasol-KM2](https://github.com/dm82m/hass-Deltasol-KM2/) and I used some of dm82m's code to fetch the KM2's data via webservice. 
 
