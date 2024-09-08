@@ -17,7 +17,7 @@ Custom component to log sensor information from Resol devices using KM2 communic
 ## Features
 
 1. Setup via `custom_flow` using multiple steps to authenticate with host, customize devices and options
-2. Combine KM2 specific sensors into devices as suggested by [hoppel118](https://github.com/dm82m/hass-Deltasol-KM2/issues/24)
+2. Combine KM2, DL2 and JSON LIVE DATA specific sensors into devices as suggested by [hoppel118](https://github.com/dm82m/hass-Deltasol-KM2/issues/24)
 3. Group sensors into 'useful' device sensors and less important diagnostics sensors
 4. Each sensor entity_id incorporate unique device name, yet presents friendly sensor name
 5. Sensors that are disabled are skipped for updates, same with sensors where the state value has not changed
