@@ -36,7 +36,7 @@ There is a disadvantage in my integration: I only focused on KM2, even though I 
 - ~~HACS integration~~
 - Pull (via curl) the device uptime from Web Interface into new device diagnostics sensor
 - Extend translations
-- Extend from KM2 module to DL2, KM1 and VBUS API (I only own 2x KM2s, so would rely on someone's access to a device)
+- Extend from KM2 module to DL2 (DONE), KM1 and VBUS API (DONE) (I only own 2x KM2s, so would rely on someone's access to a device)
 - Companian card with visualization
 - Logging into txt file
 - Synchronise device and integration 'custom name'
