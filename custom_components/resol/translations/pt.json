@@ -1,0 +1,32 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "O dispositivo já está configurado"
+        },
+        "error": {
+            "cannot_connect": "Falha ao conectar",
+            "invalid_auth": "Autenticação inválida",
+            "unknown": "Erro inesperado"
+        },
+        "step": {
+            "user": {
+                "description": "Por favor, insira as informações do seu dispositivo Resol abaixo:",
+                "data": {
+                    "host": "Host (pode ser um IP local ou público)",
+                    "port": "Porta (use redirecionamento de porta, se necessário)",
+                    "password": "Palavra-passe",
+                    "username": "Nome de utilizador"
+                }
+            },
+            "device_options": {
+                "description": "Por favor, selecione as seguintes opções:",
+                "data": {
+                    "custom_device_name": "Nome amigável do dispositivo",
+                    "polling_time": "Tempo de consulta (em segundos) para atualizar sensores a partir do dispositivo",
+                    "group_sensors": "Agrupar sensores na página do dispositivo",
+                    "disable_sensors": "Desativar sensores de diagnóstico"
+                }
+            }
+        }
+    }
+}
