@@ -63,11 +63,11 @@ async def async_setup_entry(hass, config_entry, async_add_entities):
         # Call the ResolAPI to get the device API data
         # As requested here: https://github.com/evercape/hass-resol-KM2/issues/3
         if device_check["product"] == "KM2":
-            data = await hass.async_add_executor_job(resol_api.fetch_data_km2)
+            full_data = await hass.async_add_executor_job(resol_api.fetch_data_km2)
         elif device_check["product"] == "KM1":
-            data = await hass.async_add_executor_job(resol_api.fetch_data_km1)
+            full_data = await hass.async_add_executor_job(resol_api.fetch_data_km1)
         elif device_check["product"] == "DL2" or device_check["product"] == "DL3":
-            data = await hass.async_add_executor_job(resol_api.fetch_data_dlx)
+            full_data = await hass.async_add_executor_job(resol_api.fetch_data_dlx)
 
         if not data:
             # If data returns False or is empty, log an error and return
