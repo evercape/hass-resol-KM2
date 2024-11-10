@@ -1,0 +1,32 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Gerät ist bereits konfiguriert"
+        },
+        "error": {
+            "cannot_connect": "Verbindung fehlgeschlagen",
+            "invalid_auth": "Ungültige Authentifizierung",
+            "unknown": "Unerwarteter Fehler"
+        },
+        "step": {
+            "user": {
+                "description": "Bitte geben Sie hier die Informationen zu Ihrem Resol-Gerät ein:",
+                "data": {
+                    "host": "Host (kann eine lokale oder öffentliche IP sein)",
+                    "port": "Port (verwenden Sie Port-Weiterleitung, insofern erforderlich)",
+                    "password": "Passwort",
+                    "username": "Benutzername"
+                }
+            },
+            "device_options": {
+                "description": "Bitte wählen Sie die folgenden Optionen:",
+                "data": {
+                    "custom_device_name": "Freundlicher Gerätename",
+                    "polling_time": "Abfragezeit (in Sekunden) zum Aktualisieren der Sensoren vom Gerät",
+                    "group_sensors": "Sensoren auf der Geräteseite gruppieren",
+                    "disable_sensors": "Diagnosesensoren deaktivieren"
+                }
+            }
+        }
+    }
+}
