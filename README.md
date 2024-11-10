@@ -27,16 +27,14 @@ I have made the following changes to dm82m's component. Some are improvements, o
 - Sensors that are disabled are skipped for updates, same with sensors where the state value has not changed
 - Present additional device specific attributes on each sensor
 - Extensive debug logging (hopefully helpful to anyone going through the same learning curve as myself)
-- Adding translations
-
-There is a disadvantage in my integration: I only focused on KM2, even though I am certain that this integration could easily be amended to include DL2, KM1, VBUS and other Resol devices. The reason for this is that I simply don't own any other Resol device and henceforth could not test this. If anyone is interested to extend this integration, please let me know, happy to do so. 
+- Adding translations (German, Portugese, Afrikaans)
 
 
 ## My own wish list for future improvements:
 - ~~HACS integration~~
 - Pull (via curl) the device uptime from Web Interface into new device diagnostics sensor
-- Extend translations
-- Extend from KM2 module to DL2 (DONE), KM1 and VBUS API (DONE) (I only own 2x KM2s, so would rely on someone's access to a device)
+- ~~Extend translations~~
+- ~~Extend from KM2 module to DL2, KM1 and VBUS API~~
 - Companian card with visualization
 - Logging into txt file
 - Synchronise device and integration 'custom name'
@@ -46,9 +44,9 @@ There is a disadvantage in my integration: I only focused on KM2, even though I 
 
 ### HACS
 
-1. Just search for "_Resol_Controller" integration in HACS. It will be automatically installed to the `custom_integration/resol` directory
+1. Just search for "Resol Controller" integration in HACS. It will be automatically installed to the `custom_integration/resol` directory
 2. Restart Home Assistant.
-3. In the HA UI go to "Configuration" -> "Integrations" click "+" and search for "_Resol_Controller"
+3. In the HA UI go to "Configuration" -> "Integrations" click "+" and search for "Resol Controller"
 4. Follow the UI based [Configuration](#Configuration)
 
 
@@ -62,7 +60,10 @@ This is how your custom_components directory should look like:
 custom_components
 ├── resol
 ├────── translations
+│   ├───└── af.json
+│   ├───└── de.json
 │   ├───└── en.json
+│   ├───└── pt.json
 │   ├── __init__.py
 │   ├── config_flow.py
 │   ├── const.py
@@ -74,7 +75,7 @@ custom_components
 
 ## Configuration
 
-I have tested the component with two olrder KM2 controllers, one on firmware 1.1 and the other on 1.2. Firmware updates can be found on [Resol's website](https://www.resol.de/en/produktdetail/209)
+I have tested the component with two older KM2 controllers, one on firmware 1.1 and the other on 1.2. Firmware updates can be found on [Resol's website](https://www.resol.de/en/produktdetail/209)
 
 Instead of relying on YAML code to setup this component, I opted for a custom flow which setups actual devices with its corresponding sensors. 
 
@@ -103,13 +104,13 @@ The following optional parameters can be configured in step 2 of the setup proce
 ![setup_step_2](documentation/setup_step_2.jpg)
 
 ### Controllers and devices
-After succcessful setup, the controllers representing Resol KM2 devices should show up in a list. The Resol logo is not yet shown and a [pull request](https://github.com/home-assistant/brands/pull/4904) in https://brands.home-assistant.io is currently pending.
+After succcessful setup, the controllers representing Resol KM2 devices should show up in a list.
 
 ![controller_list](documentation/controller_list.jpg)
 
 On any controller's device page, the hardware related device information is displayed, together with sensors typically grouped into main entity sensors and diagnostics. A quicklink to the Resol KM2 module is available under the 'Visit' link. 
 
-As you can see in the following screenshot, I have manually disabled some of the temperature and pump speed sensors and enabled some other diagnostics sensors using the HASS GUI.
+As you can see in the following screenshot, I have manually disabled some of the temperature and pump speed sensors and enabled some other diagnostics sensors using the HASS GUI. 
 
 ![controller_detail](documentation/controller_detail.jpg)
 
