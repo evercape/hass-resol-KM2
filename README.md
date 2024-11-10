@@ -9,7 +9,7 @@
 [![Community Forum][forum-shield]][forum]
 
 
-# Hass-Resol-KM2
+# Resol Controller (Hass-Resol-KM2 Integration)
 
 [Home Assistant](https://home-assistant.io/) custom component to log sensor information from Resol devices using KM2 communication module. This is my first time programming in Python and publishing to Github. Over time, this component has been updated to also work with [DL2 and JSON Live Data Server]([url](https://github.com/evercape/hass-resol-KM2/issues/3)).
 
