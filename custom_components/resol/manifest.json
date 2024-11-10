@@ -9,10 +9,10 @@
     "recorder",
     "history"
   ],
-  "documentation": "https://github.com/evercape/resol",
+  "documentation": "https://github.com/evercape/hass-resol-KM2",
   "integration_type": "hub",
   "iot_class": "local_polling",
-  "issue_tracker": "https://github.com/evercape/resol/issues",
+  "issue_tracker": "https://github.com/evercape/hass-resol-KM2/issues",
   "requirements": [],
   "version": "2024.09.1"
 }
