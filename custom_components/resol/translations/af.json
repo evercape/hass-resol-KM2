@@ -1,0 +1,32 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Toestel is reeds gekonfigureer"
+        },
+        "error": {
+            "cannot_connect": "Kon nie koppel nie",
+            "invalid_auth": "Ongeldige verifikasie",
+            "unknown": "Onverwagte fout"
+        },
+        "step": {
+            "user": {
+                "description": "Voer asseblief die besonderhede van u Resol-toestel hieronder in:",
+                "data": {
+                    "host": "Host (kan 'n plaaslike of openbare IP wees)",
+                    "port": "Poort (gebruik poort-versending indien nodig)",
+                    "password": "Wagwoord",
+                    "username": "Gebruikersnaam"
+                }
+            },
+            "device_options": {
+                "description": "Kies asseblief die volgende opsies:",
+                "data": {
+                    "custom_device_name": "Vriendelike toestelnaam",
+                    "polling_time": "Peilingstyd (in sekondes) om sensors van toestel op te dateer",
+                    "group_sensors": "Groepeer sensors op toestelbladsy",
+                    "disable_sensors": "Deaktiveer diagnostiese sensors"
+                }
+            }
+        }
+    }
+}
