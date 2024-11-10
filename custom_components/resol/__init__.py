@@ -68,6 +68,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry) -> bool:
             serial_number=device_info.get('serial'),
             name=options.get('custom_device_name'), # Custom device name from user step 2 (options)
             model=device_info.get('product'),
+            model_id=device_info.get('build'), # https://developers.home-assistant.io/blog/2024/07/16/device-info-model-id/
             sw_version=device_info.get('version'),
             configuration_url="http://" + device_info["host"] + ":" + device_info["port"],
             suggested_area = "Boiler Room"
