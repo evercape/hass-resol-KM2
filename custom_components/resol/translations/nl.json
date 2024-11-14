@@ -1,0 +1,32 @@
+{
+    "config": {
+        "abort": {
+            "already_configured": "Apparaat is al geconfigureerd"
+        },
+        "error": {
+            "cannot_connect": "Verbinden mislukt",
+            "invalid_auth": "Ongeldige authenticatie",
+            "unknown": "Onverwachte fout"
+        },
+        "step": {
+            "user": {
+                "description": "Vul de gegevens van het Resol apparaat in:",
+                "data": {
+                    "host": "Host (kan een lokaal of openbaar IP adres zijn)",
+                    "port": "Port (Gebruik port-forwarding indien nodig)",
+                    "password": "Wachtwoord",
+                    "username": "Gebruikersnaam"
+                }
+            },
+            "device_options": {
+                "description": "Pas indien gewenst de volgende gegevens aan:",
+                "data": {
+                    "custom_device_name": "Apparaatnaam naar keuze",
+                    "polling_time": "Tijdsinterval (in seconden) voor het updaten van de sensoren van het apparaat",
+                    "group_sensors": "Groepeer sensoren op de apparaat pagina",
+                    "disable_sensors": "Deactiveer diagnostische sensoren"
+                }
+            }
+        }
+    }
+}

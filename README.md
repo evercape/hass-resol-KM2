@@ -27,7 +27,7 @@ I have made the following changes to dm82m's component. Some are improvements, o
 - Sensors that are disabled are skipped for updates, same with sensors where the state value has not changed
 - Present additional device specific attributes on each sensor
 - Extensive debug logging (hopefully helpful to anyone going through the same learning curve as myself)
-- Adding translations (German, Portugese, Afrikaans)
+- Adding translations (German, Portugese, Afrikaans, Dutch)
 
 
 ## My own wish list for future improvements:
@@ -63,6 +63,7 @@ custom_components
 │   ├───└── af.json
 │   ├───└── de.json
 │   ├───└── en.json
+│   ├───└── nl.json
 │   ├───└── pt.json
 │   ├── __init__.py
 │   ├── config_flow.py
