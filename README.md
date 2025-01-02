@@ -49,7 +49,7 @@ I have made the following changes to dm82m's component. Some are improvements, o
 1. Just search for "Resol Controller" integration in HACS. It will be automatically installed to the `custom_integration/resol` directory
 2. Restart Home Assistant.
 3. In the HA UI go to "Configuration" -> "Integrations" click "+" and search for "Resol Controller"
-4. Follow the UI based [Configuration](#Configuration)
+4. Follow the UI based [Configuration](#Configuration) please note that passwords of Resol are restricted to upper/lower case and numbers. No pipe/join special characters please.
 
 
 ### Manual install
