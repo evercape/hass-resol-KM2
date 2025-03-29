@@ -1,5 +1,7 @@
 {
   "name": "Resol Controller (UI Based) for KM1/KM2, DL2, JSON Live Data Server",
   "homeassistant": "2024.8",
-  "render_readme": true
+  "render_readme": true,
+  "zip_release": true,
+  "filename": "resol.zip"
 }
