@@ -3,6 +3,7 @@
 [![GitHub Activity][commits-shield]][commits]
 [![License][license-shield]][license]
 
+[![downloads_total](https://img.shields.io/github/downloads/evercape/hass-resol-km2/total?style=for-the-badge)](https://github.com/evercape/hass-resol-KM2/releases)
 [![downloads_latest](https://img.shields.io/github/downloads/evercape/hass-resol-KM2/latest/total?style=for-the-badge)](https://github.com/evercape/hass-resol-KM2/releases)
 
 [![hacs][hacsbadge]][hacs]
